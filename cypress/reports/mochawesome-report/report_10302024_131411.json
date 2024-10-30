@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-30T16:14:09.981Z",
+    "end": "2024-10-30T16:14:11.566Z",
+    "duration": 1585,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e9c052d7-b0ac-424a-ad72-54ab5d53668b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\users\\putUsers.cy.js",
+      "file": "cypress\\e2e\\users\\putUsers.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "166db747-714f-45d4-b929-e3446d41442e",
+          "title": "PUT method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "edit a user",
+              "fullTitle": "PUT method edit a user",
+              "timedOut": null,
+              "duration": 1511,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "payload.email = _faker.faker.internet.email();\ncy.get('@responsePost').then(response => {\n  cy.putUser(response.body._id, payload).should(response => {\n    expect(response.status).to.be.equal(200);\n    expect(response.body.message).to.be.equal('Registro alterado com sucesso');\n    expect(response.body).to.have.property('message');\n    expect(response.body.message).to.be.a('string');\n  });\n});",
+              "err": {},
+              "uuid": "699713f7-eeb8-462b-a4fc-b310f499f38a",
+              "parentUUID": "166db747-714f-45d4-b929-e3446d41442e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "699713f7-eeb8-462b-a4fc-b310f499f38a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1511,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes backend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

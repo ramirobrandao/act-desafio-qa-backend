@@ -1,0 +1,150 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-30T16:12:42.301Z",
+    "end": "2024-10-30T16:12:45.220Z",
+    "duration": 2919,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea615e63-be39-4478-b303-f24fd1d83c7e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\users\\getUsers.cy.js",
+      "file": "cypress\\e2e\\users\\getUsers.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8c5a60d6-e2cf-4d37-8c95-3086158b1e4b",
+          "title": "GET method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get all users",
+              "fullTitle": "GET method get all users",
+              "timedOut": null,
+              "duration": 1068,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getAllUsers().should(response => {\n  expect(response.status).to.be.equal(200);\n  expect(response.body.quantidade).to.be.greaterThan(0);\n});",
+              "err": {},
+              "uuid": "fcf6df51-dab4-4cdf-8464-1077f6529544",
+              "parentUUID": "8c5a60d6-e2cf-4d37-8c95-3086158b1e4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "get a user id",
+              "fullTitle": "GET method get a user id",
+              "timedOut": null,
+              "duration": 1543,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getAllUsers().then(responseAllUsers => {\n  cy.getUserById(responseAllUsers.body.usuarios[0]._id).as('responseById');\n  cy.get('@responseById').should(response => {\n    expect(response.status).to.be.equal(200);\n    expect(response.body.nome).to.be.equal(responseAllUsers.body.usuarios[0].nome);\n    expect(response.body.email).to.be.equal(responseAllUsers.body.usuarios[0].email);\n    expect(response.body.password).to.be.equal(responseAllUsers.body.usuarios[0].password);\n    expect(response.body.administrador).to.be.equal(responseAllUsers.body.usuarios[0].administrador);\n  });\n});",
+              "err": {},
+              "uuid": "32fea424-3501-43a7-964f-0740cdd23ff0",
+              "parentUUID": "8c5a60d6-e2cf-4d37-8c95-3086158b1e4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "get a user not found",
+              "fullTitle": "GET method get a user not found",
+              "timedOut": null,
+              "duration": 222,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: `https://serverest.dev/usuarios/11111111111`,\n  failOnStatusCode: false\n}).as('getUserNotFound');\ncy.get('@getUserNotFound').should(response => {\n  expect(response.status).to.be.equal(400);\n  expect(response.body.message).to.be.equal('Usuário não encontrado');\n});",
+              "err": {},
+              "uuid": "9b3bcfeb-c417-47e0-8e55-20068af2e36a",
+              "parentUUID": "8c5a60d6-e2cf-4d37-8c95-3086158b1e4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fcf6df51-dab4-4cdf-8464-1077f6529544",
+            "32fea424-3501-43a7-964f-0740cdd23ff0",
+            "9b3bcfeb-c417-47e0-8e55-20068af2e36a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2833,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes backend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

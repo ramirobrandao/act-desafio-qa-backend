@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-30T16:14:00.551Z",
+    "end": "2024-10-30T16:14:02.191Z",
+    "duration": 1640,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "df13c15b-d020-4c27-bfa8-26af9d87a482",
+      "title": "",
+      "fullFile": "cypress\\e2e\\users\\postUsers.cy.js",
+      "file": "cypress\\e2e\\users\\postUsers.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "12ef7fad-c773-41f3-a715-d29ed60fb125",
+          "title": "POST method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create a user and validade the response schema",
+              "fullTitle": "POST method create a user and validade the response schema",
+              "timedOut": null,
+              "duration": 872,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.postUser(payload).should(response => {\n  expect(response.status).to.be.equal(201);\n  expect(response.body.message).to.be.equal('Cadastro realizado com sucesso');\n  expect(response.body).to.have.property('message');\n  expect(response.body.message).to.be.a('string');\n  expect(response.body).to.have.property('_id');\n  expect(response.body._id).to.be.a('string');\n});",
+              "err": {},
+              "uuid": "59edc3b4-f0aa-4cd3-aae9-5a5c5a498820",
+              "parentUUID": "12ef7fad-c773-41f3-a715-d29ed60fb125",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "create user with existing email",
+              "fullTitle": "POST method create user with existing email",
+              "timedOut": null,
+              "duration": 692,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.postUser(payloadexistingemail).should(response => {\n  expect(response.status).to.be.equal(400);\n  expect(response.body.message).to.be.equal('Este email já está sendo usado');\n  expect(response.body).to.have.property('message');\n  expect(response.body.message).to.be.a('string');\n});",
+              "err": {},
+              "uuid": "eb9d30e6-d866-4f1e-bdf8-f545e67fdc38",
+              "parentUUID": "12ef7fad-c773-41f3-a715-d29ed60fb125",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59edc3b4-f0aa-4cd3-aae9-5a5c5a498820",
+            "eb9d30e6-d866-4f1e-bdf8-f545e67fdc38"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1564,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes backend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
