@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2024-10-30T03:37:37.058Z",
-    "end": "2024-10-30T03:37:38.428Z",
-    "duration": 1370,
+    "start": "2024-10-30T16:19:27.131Z",
+    "end": "2024-10-30T16:19:28.736Z",
+    "duration": 1605,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4e69acf8-ceb1-4aef-bd50-a08f18ea8bbf",
+      "uuid": "166b4f0c-2e8a-498f-bb1b-21b9e08a548a",
       "title": "",
       "fullFile": "cypress\\e2e\\users\\postUsers.cy.js",
       "file": "cypress\\e2e\\users\\postUsers.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e0aced86-7e2f-43fd-b0f3-94322d456f98",
+          "uuid": "f66d208f-1e69-4bb6-a6cf-4505587d39d4",
           "title": "POST method",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "create a user and validade the response schema",
               "fullTitle": "POST method create a user and validade the response schema",
               "timedOut": null,
-              "duration": 716,
+              "duration": 853,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.postUser(payload).should(response => {\n  expect(response.status).to.be.equal(201);\n  expect(response.body.message).to.be.equal('Cadastro realizado com sucesso');\n  expect(response.body).to.have.property('message');\n  expect(response.body.message).to.be.a('string');\n  expect(response.body).to.have.property('_id');\n  expect(response.body._id).to.be.a('string');\n});",
               "err": {},
-              "uuid": "bac4464c-8850-4125-b784-bd204ac5f7a6",
-              "parentUUID": "e0aced86-7e2f-43fd-b0f3-94322d456f98",
+              "uuid": "0e4b1904-871b-49db-82f5-0c221177ac9c",
+              "parentUUID": "f66d208f-1e69-4bb6-a6cf-4505587d39d4",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "create user with existing email",
               "fullTitle": "POST method create user with existing email",
               "timedOut": null,
-              "duration": 606,
+              "duration": 656,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.postUser(payloadexistingemail).should(response => {\n  expect(response.status).to.be.equal(400);\n  expect(response.body.message).to.be.equal('Este email já está sendo usado');\n  expect(response.body).to.have.property('message');\n  expect(response.body.message).to.be.a('string');\n});",
               "err": {},
-              "uuid": "e5875f34-a29f-4e96-906f-704120ce8f37",
-              "parentUUID": "e0aced86-7e2f-43fd-b0f3-94322d456f98",
+              "uuid": "c3b7894e-031c-48f0-b05c-217d9e65f6ba",
+              "parentUUID": "f66d208f-1e69-4bb6-a6cf-4505587d39d4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "bac4464c-8850-4125-b784-bd204ac5f7a6",
-            "e5875f34-a29f-4e96-906f-704120ce8f37"
+            "0e4b1904-871b-49db-82f5-0c221177ac9c",
+            "c3b7894e-031c-48f0-b05c-217d9e65f6ba"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1322,
+          "duration": 1509,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2024-10-30T16:13:00.869Z",
-    "end": "2024-10-30T16:13:02.363Z",
-    "duration": 1494,
+    "start": "2024-10-30T16:19:36.732Z",
+    "end": "2024-10-30T16:19:38.434Z",
+    "duration": 1702,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f064ecae-1e94-4149-a09a-b142e3b4a4f1",
+      "uuid": "846db2a8-60c9-47bd-9d46-d23932e73982",
       "title": "",
       "fullFile": "cypress\\e2e\\users\\putUsers.cy.js",
       "file": "cypress\\e2e\\users\\putUsers.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "db9d783a-fddd-44f9-bc00-4a03c4d8e875",
+          "uuid": "a4ebd001-c9cc-414e-b95e-b48a18b3f9ac",
           "title": "PUT method",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "edit a user",
               "fullTitle": "PUT method edit a user",
               "timedOut": null,
-              "duration": 1435,
+              "duration": 1630,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "payload.email = _faker.faker.internet.email();\ncy.get('@responsePost').then(response => {\n  cy.putUser(response.body._id, payload).should(response => {\n    expect(response.status).to.be.equal(200);\n    expect(response.body.message).to.be.equal('Registro alterado com sucesso');\n    expect(response.body).to.have.property('message');\n    expect(response.body.message).to.be.a('string');\n  });\n});",
               "err": {},
-              "uuid": "5bea3272-1e84-4406-a313-f58152bc4806",
-              "parentUUID": "db9d783a-fddd-44f9-bc00-4a03c4d8e875",
+              "uuid": "e4e6a468-4686-4267-8cc9-c79c054030b2",
+              "parentUUID": "a4ebd001-c9cc-414e-b95e-b48a18b3f9ac",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5bea3272-1e84-4406-a313-f58152bc4806"
+            "e4e6a468-4686-4267-8cc9-c79c054030b2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1435,
+          "duration": 1630,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
