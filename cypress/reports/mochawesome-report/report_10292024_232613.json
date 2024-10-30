@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-30T02:26:12.009Z",
+    "end": "2024-10-30T02:26:13.834Z",
+    "duration": 1825,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cdec7d54-b530-44bd-b3f0-78464bbf2cb8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\users\\deleteUsers.cy.js",
+      "file": "cypress\\e2e\\users\\deleteUsers.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "be5d4c5a-7f8c-494d-840a-8845ae94cdca",
+          "title": "DELETE method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "delete a user",
+              "fullTitle": "DELETE method delete a user",
+              "timedOut": null,
+              "duration": 1803,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@responsePost').then(response => {\n  cy.deleteUser(response.body._id).should(response => {\n    expect(response.status).to.be.equal(200);\n    expect(response.body.message).to.be.equal('Registro excluído com sucesso');\n    expect(response.body).to.have.property('message');\n    expect(response.body.message).to.be.a('string');\n  });\n});",
+              "err": {},
+              "uuid": "90291a4d-2e55-4606-82c2-c6719477c29d",
+              "parentUUID": "be5d4c5a-7f8c-494d-840a-8845ae94cdca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "90291a4d-2e55-4606-82c2-c6719477c29d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1803,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes backend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
