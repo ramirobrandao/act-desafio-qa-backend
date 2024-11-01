@@ -52,4 +52,4 @@ Para verificar a instalação do gerenciador de pacoted NPM (deve retornar a ver
 
 - No terminal do VSCode deve ser executado o seguinte comando para que o Cypress seja executado em modo headless:
 
-`` npx cypress open``
+`` npx cypress run``
