@@ -44,7 +44,7 @@ Para verificar a instalação do gerenciador de pacoted NPM (deve retornar a ver
 - Acessar o link [https://git-scm.com/downloads](https://git-scm.com/downloads), baixar e instalar o Git/GitBash;
  - No Windows Explorer, navegar até a pasta onde deseja clonar o projeto, abrir o GitBash (botão direito -> *Git Bash Here*) e digitar:
 
-``git clone https://github.com/ramirobrandao/vox-desafio-qa.git ``
+``git clone https://github.com/ramirobrandao/act-desafio-qa-backend.git ``
  - Para que o Cypress funcione, é necessário que ele seja instalado atraves do *npm install* na pasta raiz do projeto
 ``npm install``
 
